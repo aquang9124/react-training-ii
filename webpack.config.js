@@ -1,9 +1,6 @@
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
 module.exports = {
 	entry: [
-		'./app/src/index.js',
-		'webpack-dev-server/client?http://localhost:8080'
+		'./app/src/index.js'
 	],
 	output: {
 		path: __dirname + '/public',
@@ -26,6 +23,10 @@ module.exports = {
 		extensions: ['', '.js', '.jsx']
 	},
 	devServer: {
-		contentBase: './public'
+		historyApiFallback: true,
+		contentBase: './public',
+		proxy: {
+			'/api/*': 'http://localhost:8000'
+		}
 	}
 };
