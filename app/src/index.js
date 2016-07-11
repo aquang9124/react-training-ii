@@ -8,4 +8,4 @@ let data = [
  	{id: 2, author: "Jordan Walke", text: "This is *another* comment"}
 ];
 
-ReactDOM.render(<CommentBox url="/api/comments" />, document.getElementById('content'));
+ReactDOM.render(<CommentBox url="/api/comments" pollInterval={2000} />, document.getElementById('content'));

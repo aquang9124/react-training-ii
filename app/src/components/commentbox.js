@@ -10,8 +10,10 @@ export default class CommentBox extends React.Component {
 		this.state = {
 			data: []
 		};
+
+		this.loadCommentsFromServer = this.loadCommentsFromServer.bind(this);
 	}
-	componentDidMount() {
+	loadCommentsFromServer() {
 		$.ajax({
 			url: this.props.url,
 			dataType: 'json',
@@ -25,6 +27,10 @@ export default class CommentBox extends React.Component {
 				console.error(this.props.url, status, err.toString());
 			}.bind(this)
 		});
+	}
+	componentDidMount() {
+		this.loadCommentsFromServer();
+		setInterval(this.loadCommentsFromServer, this.props.pollInterval);
 	}
 	render() {
 		return (
