@@ -1,0 +1,21 @@
+body, html {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #797979;
+}
+
+h1 {
+	margin: 10px;
+}
+
+button.btn-cool {
+	width: 100px;
+	border-radius: 5px;
+	border: 2px solid black;
+	height: 35px;
+	background-color: #ca2017;
+	color: #fff;
+	margin-bottom: 10px;
+}
